@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HYPERLINK XSS</title>
+</head>
+<body>
+    <h1>XSS WITH NEWLINE</h1>
+    <form id="xssForm">
+        <label for="userInput">Enter URL:</label>
+        <input type="text" id="userInput" value="http://example.com">
+        <button type="submit">Submit</button>
+    </form>
+    <div id="output"></div>
+
+    <script>
+        document.getElementById('xssForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var userInput = document.getElementById('userInput').value;
+            var outputDiv = document.getElementById('output');
+
+            // Check if the URL contains '://'
+            if (userInput.indexOf('://') === -1) {
+                // If not, clear the input
+                outputDiv.innerHTML = '</br>Invalid URL';
+            } else {
+
+            outputDiv.innerHTML = '</br><a href="' + userInput + '">'+ userInput +'</a>';
+        }
+        });
+    </script>
+</body>
+</html>
