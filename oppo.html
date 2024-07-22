@@ -3,7 +3,7 @@
 <head>
     <script type="text/javascript">
         setTimeout(function(){
-            window.location.replace("javascript:alert(document.location);");
+            history.replaceState(null, null, "javascript://%0ahistory.replaceState(null, null, %22javascript://%0aalert(document.location)%22);");
         }, 2000); // 2000 milidetik = 2 detik
     </script>
 </head>
