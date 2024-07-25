@@ -3,32 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>javascript:alert(1);</title>
+  <title>Embed URL in iframe</title>
 </head>
 <body>
-  <h1>javascript:alert(1);</h1>
-  <pre id="getResult"></pre>
-
-  <script>
-    document.addEventListener('DOMContentLoaded', function() {
-      var xhr = new XMLHttpRequest();
-      xhr.open('GET', 'https://syukirman-amir.github.io/xss/Pwned.txt', true);
-
-      xhr.onload = function () {
-        if (xhr.status >= 200 && xhr.status < 300) {
-          var data = JSON.parse(xhr.responseText);
-          document.getElementById('getResult').textContent = JSON.stringify(data, null, 2);
-        } else {
-          alert('The request failed!');
-        }
-      };
-
-      xhr.onerror = function () {
-        alert('There was a network error.');
-      };
-
-      xhr.send();
-    });
-  </script>
+  <h1 style="color: green;">Embed File in iframe</h1>
+  <iframe src="https://syukirman-amir.github.io/xss/MYOPPO.zip" width="800" height="600" style="border: none;"></iframe>
 </body>
 </html>
