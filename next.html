@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Please wait</title>
+</head>
+<body>
+  <h1>Please wait</h1>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const urls = [
+        'https://x.com/iamliontin',
+        'https://www.instagram.com/officialiluv/',
+        'https://www.linkedin.com/in/syukirman-amir-288b66218/',
+        'https://security.oppo.com/en/charts'
+      ];
+
+      const delay = 10000; // Delay between opening URLs in milliseconds
+
+      urls.forEach((url, index) => {
+        setTimeout(() => {
+          window.open(url, '_blank'); // Open URL in a new tab
+        }, index * delay);
+      });
+    });
+  </script>
+</body>
+</html>
