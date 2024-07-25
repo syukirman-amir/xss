@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>javascript:alert(1);</title>
+</head>
+<body>
+  <h1>javascript:alert(1);</h1>
+  <pre id="getResult"></pre>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var xhr = new XMLHttpRequest();
+      xhr.open('GET', 'https://syukirman-amir.github.io/xss/MYOPPO.zip', true);
+
+      xhr.onload = function () {
+        if (xhr.status >= 200 && xhr.status < 300) {
+          var data = JSON.parse(xhr.responseText);
+          document.getElementById('getResult').textContent = JSON.stringify(data, null, 2);
+        } else {
+          alert('The request failed!');
+        }
+      };
+
+      xhr.onerror = function () {
+        alert('There was a network error.');
+      };
+
+      xhr.send();
+    });
+  </script>
+</body>
+</html>
